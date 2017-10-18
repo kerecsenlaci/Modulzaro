@@ -1,0 +1,34 @@
+﻿<Window x:Class="KLModulzaro.TreatmentSheet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KLModulzaro"
+        mc:Ignorable="d"
+        Title="TreatmentSheet" Height="600" Width="500">
+    <Grid>
+        <ListBox ItemsSource="{Binding Patient.TreatmentList}" HorizontalAlignment="Left" Height="100" Margin="10,151,0,0" VerticalAlignment="Top" Width="472">
+            <ListBox.ItemTemplate>
+            <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding BNOkey}"/>
+                        <Label Content="{Binding Note}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox HorizontalAlignment="Left" Height="122" Margin="10,325,0,0" TextWrapping="Wrap" Text="{Binding NewTreatment.Note,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="472"/>
+        <Label Content="Beteg neve:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Patient.Name}" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Életkor:" HorizontalAlignment="Left" Margin="25,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Patient.Age}" HorizontalAlignment="Left" Margin="116,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="TAJ szám:" HorizontalAlignment="Left" Margin="25,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Patient.TAJ}" HorizontalAlignment="Left" Margin="116,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Korábbi kezelések:" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="BNO kód:" HorizontalAlignment="Left" Margin="10,256,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding BNOList}" SelectedItem="{Binding NewTreatment.BNOkey}" Margin="103,260,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Jegyzet:" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top"/>
+        <Button Content="Mentés" HorizontalAlignment="Left" Margin="206,522,0,0" VerticalAlignment="Top" Width="75" Click="Submit"/>
+
+    </Grid>
+</Window>

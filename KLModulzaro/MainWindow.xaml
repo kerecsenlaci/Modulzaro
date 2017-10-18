@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KLModulzaro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Beteglista" Height="350" Width="525">
+    
     <Grid>
-        
+        <ListBox ItemsSource="{Binding PatientList}" SelectedItem="{Binding SelectedPatient}" HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="228">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Új beteg" HorizontalAlignment="Left" Margin="271,10,0,0" VerticalAlignment="Top" Width="223" Click="NewPatientClick"/>
+        <Button Content="Adatok módosítása" HorizontalAlignment="Left" Margin="271,35,0,0" VerticalAlignment="Top" Width="223" Click="PatientClick"/>
+        <Button Content="Kezelés" HorizontalAlignment="Left" Margin="271,199,0,0" VerticalAlignment="Top" Width="223" Click="ButtoTreatmentSheetClick"/>
+        <Button Content="Legtöbbet kezelt beteg" HorizontalAlignment="Left" Margin="271,73,0,0" VerticalAlignment="Top" Width="223" Click="Querry1"/>
+        <Button Content="Kezelt betegek száma" HorizontalAlignment="Left" Margin="271,98,0,0" VerticalAlignment="Top" Width="223" Click="Querry2"/>
+        <Button Content="Elhízott betegek átlag életkora" HorizontalAlignment="Left" Margin="271,123,0,0" VerticalAlignment="Top" Width="223"/>
+
+
     </Grid>
 </Window>
